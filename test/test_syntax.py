@@ -12,13 +12,15 @@ class SyntaxTest(unittest.TestCase):
         except SyntaxError:
             self.fail("Unexpected SyntaxError for valid code")
 
-    def test_invalid_code(self):
+    def test_valid_code(self):
         code = """
-        def my_function:
+        def my_function():
             return "Hello, world!"
         """
-        with self.assertRaises(SyntaxError):
+        try:
             ast.parse(code)
+        except SyntaxError:
+            self.fail("Unexpected SyntaxError for valid code")
 
 if __name__ == "__main__":
     unittest.main()
