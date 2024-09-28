@@ -7,7 +7,10 @@ class SyntaxTest(unittest.TestCase):
         def my_function():
             return "Hello, world!"
         """
-        ast.parse(code)
+        try:
+            ast.parse(code)
+        except SyntaxError:
+            self.fail("Unexpected SyntaxError for valid code")
 
     def test_invalid_code(self):
         code = """
