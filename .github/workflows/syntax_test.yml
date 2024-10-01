@@ -1,11 +1,13 @@
 name: Syntax Test
 
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches: [main]
 
 jobs:
   syntax_test:
+    if: github.event.pull_request.merged == true  # Only run if the PR is merged
     runs-on: windows-latest
 
     steps:
