@@ -8,9 +8,9 @@ import os
 # api_hash = os.getenv("TG_API_HASH")
 # phone = os.getenv("PHONE")
 
-api_id = "26815993"
-api_hash = "e8fe32bae8ed0fb6cd53ab5239bf36b3"
-phone = "+251910402038"
+api_id = "*********"
+api_hash = "********************"
+phone = "************"
 
 
 
